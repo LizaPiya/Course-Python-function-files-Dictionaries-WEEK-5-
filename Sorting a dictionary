@@ -1,0 +1,43 @@
+L = ['E', 'F', 'B', 'A', 'D', 'I', 'I', 'C', 'B', 'A', 'D', 'D', 'E', 'D']
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+y = sorted(d.keys())
+for k in y:
+    print("{} appears {} times".format(k, d[k]))
+    
+-------------------------------------------------------
+Output:
+A appears 2 times
+B appears 2 times
+C appears 1 times
+D appears 4 times
+E appears 2 times
+F appears 1 times
+I appears 2 times
+----------------------------------------------------------------------------------------------------------------------------------
+L = ['E', 'F', 'B', 'A', 'D', 'I', 'I', 'C', 'B', 'A', 'D', 'D', 'E', 'D']
+
+d = {}
+for x in L:
+    if x in d:
+        d[x] = d[x] + 1
+    else:
+        d[x] = 1
+
+y = sorted(d.keys(), key=lambda k: d[k], reverse=True) 
+for k in y:
+    print("{} appears {} times".format(k, d[k]))
+-----------------------------
+Output:
+D appears 4 times
+I appears 2 times
+A appears 2 times
+B appears 2 times
+E appears 2 times
+C appears 1 times
+F appears 1 times
